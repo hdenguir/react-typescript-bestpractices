@@ -24,7 +24,6 @@ const Home: React.FC<IProps> = ({ auth, checkLogin }) => {
                 <p>
                     Edit {auth && auth.user} <code>src/App.tsx</code> and save to reload.
                 </p>
-
                 <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                     Learn React
                 </a>
@@ -45,4 +44,5 @@ const mapStateToProps = (state: RootState) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     checkLogin: (user: any) => dispatch(checkLogin(user))
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

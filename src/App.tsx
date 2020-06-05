@@ -7,18 +7,16 @@ import Home from './pages/Home';
 
 import './App.css';
 
-const App: React.FC = () => {
-    return (
-        <div className="container">
-            <BrowserRouter>
-                <Provider store={store}>
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                    </Switch>
-                </Provider>
-            </BrowserRouter>
-        </div>
-    );
-};
+const App: React.FC = () => (
+    <div className="container">
+        <BrowserRouter>
+            <Provider store={store}>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                </Switch>
+            </Provider>
+        </BrowserRouter>
+    </div>
+);
 
 export default App;
