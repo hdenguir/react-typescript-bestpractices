@@ -4,8 +4,8 @@ import { Dispatch } from 'redux';
 import PropTypes from 'prop-types';
 
 import logo from '../logo.svg';
-import { checkLogin } from '../store/actions';
-import { RootState } from '../store/reducers';
+import { checkLogin, AppActions } from '../store/actions';
+import { AppState } from '../store/reducers';
 
 interface IProps {
     auth: any;
@@ -37,12 +37,12 @@ Home.propTypes = {
     checkLogin: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state: RootState) => ({
+const mapStateToProps = (state: AppState) => ({
     auth: state.auth
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    checkLogin: (user: any) => dispatch(checkLogin(user))
+const mapDispatchToProps = (dispatch: Dispatch<AppActions>) => ({
+    checkLogin: (user: string) => dispatch(checkLogin(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

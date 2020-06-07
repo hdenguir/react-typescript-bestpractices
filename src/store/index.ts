@@ -1,8 +1,11 @@
 import { createStore, applyMiddleware } from 'redux';
 import { rootReducer } from './reducers';
 import { createLogger } from 'redux-logger';
+import thunk, { ThunkMiddleware } from 'redux-thunk';
+import { AppActions } from './actions';
+import { AppState } from './reducers';
 
-const middles = [];
+const middles = [thunk as ThunkMiddleware<AppState, AppActions>];
 
 if (process.env.NODE_ENV === 'development') {
     const logger = createLogger({});

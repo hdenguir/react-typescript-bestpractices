@@ -1,14 +1,15 @@
 import { EActionTypes } from '../types';
-import { TAuthActions } from '../actions';
+import { AppActions } from '../actions';
 
-export interface IAUTHSTATE {
-    user: any;
-    loading: boolean;
-    error: any;
+export interface IAuthState {
+    readonly user: string;
+    readonly loading: boolean;
+    readonly error: any;
 }
-const initState = { user: null, error: null, loading: false };
 
-const authReducer = (state: IAUTHSTATE = initState, action: TAuthActions): IAUTHSTATE => {
+const initState: IAuthState = { user: '', error: null, loading: false };
+
+const authReducer = (state: IAuthState = initState, action: AppActions): IAuthState => {
     const { type, payload } = action;
 
     switch (type) {

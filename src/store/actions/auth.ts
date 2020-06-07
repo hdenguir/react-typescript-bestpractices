@@ -1,4 +1,5 @@
 import { EActionTypes } from '../types';
+import { AppActions } from '.';
 
 export interface IAction {
     type: EActionTypes;
@@ -33,7 +34,7 @@ export type TAuthActions =
     | IRegisterSuccessAction
     | IRegisterFailAction;
 
-export const checkLogin = (user: string): ICheckAuthAction => ({
+export const checkLogin = (user: string): AppActions => ({
     type: EActionTypes.CHECK_AUTH,
     payload: user
 });
